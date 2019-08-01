@@ -12,7 +12,6 @@ module ActiveStorageSilentLogs
 
     def call(env)
       if skip?(env)
-        puts 'should skip'
         tssss(env) { @app.call(env) }
       else
         @app.call(env)
@@ -21,7 +20,7 @@ module ActiveStorageSilentLogs
 
     def tssss(env)
       begin
-        Rails.logger.level = 999
+        Rails.logger.level = 999 # never
         yield
       ensure
         Rails.logger.level = level
@@ -31,7 +30,6 @@ module ActiveStorageSilentLogs
     private
 
     def skip?(env)
-      puts "------ #{env['PATH_INFO']}"
       env['PATH_INFO'] =~ FORMAT
     end
 
