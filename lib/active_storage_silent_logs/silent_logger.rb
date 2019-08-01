@@ -21,7 +21,7 @@ module ActiveStorageSilentLogs
 
     def tssss(env)
       begin
-        Rails.logger.level = Logger::FATAL
+        Rails.logger.level = 999
         yield
       ensure
         Rails.logger.level = level
