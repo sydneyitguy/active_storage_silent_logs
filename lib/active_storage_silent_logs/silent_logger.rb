@@ -30,6 +30,7 @@ module ActiveStorageSilentLogs
     private
 
     def skip?(env)
+      puts "------ #{env['PATH_INFO']}"
       env['PATH_INFO'] =~ FORMAT
     end
 
