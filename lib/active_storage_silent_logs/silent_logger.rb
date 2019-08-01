@@ -12,6 +12,7 @@ module ActiveStorageSilentLogs
 
     def call(env)
       if skip?(env)
+        puts 'should skip'
         tssss(env) { @app.call(env) }
       else
         @app.call(env)
