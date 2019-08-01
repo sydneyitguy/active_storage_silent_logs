@@ -1,7 +1,7 @@
 module ActiveStorageSilentLogs
   class SilentLogger
     KEY    = 'active_storage_silent_logs.old_level'.freeze
-    FORMAT = /rails\/active_storage/.freeze
+    FORMAT = /active_storage/.freeze
 
     attr_reader :level
 
